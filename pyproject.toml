@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cymruwhoisbulk"
+authors = [{ email = "tdebize@mail.com" }]
+description = "A simple script to perform bulk requests to the Cymru WHOIS service"
+readme = "README.md"
+requires-python = ">=3"
+keywords = ["python", "cymru", "whois", "ip", "asn", "hoster", "hosting"]
+license = "MIT"
+classifiers = [
+    'Topic :: Security',
+    'Programming Language :: Python :: 3'
+]
+dynamic = ["version", "dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["cymruwhoisbulk/requirements.txt"]}
+version = {attr = "cymruwhoisbulk.cymruwhoisbulk.VERSION"}
+
+[project.urls]
+Homepage = "https://github.com/maaaaz/cymruwhoisbulk"
+
+[project.scripts]
+cymruwhoisbulk = "cymruwhoisbulk.cymruwhoisbulk:main"
